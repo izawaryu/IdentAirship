@@ -28,6 +28,74 @@ public class SetData {
         return airframeParts;
     }
 
+
+    public List<String> setEmpennageFeatures () {
+
+        String[] features = {
+                "Control Surfaces",
+                "Fore/Aft Location",
+                "Stabilizers"
+        };
+
+        List<String> empennageFeatures = new ArrayList<String>(Arrays.asList(features));
+        return empennageFeatures;
+    };
+
+    public List<String> setEngineFeatures () {
+
+        String[] features = {
+                "Blades",
+                "Count",
+                "Location",
+                "Manufacturer",
+                "Propulsion Type"
+        };
+
+        List<String> engineFeatures = new ArrayList<String>(Arrays.asList(features));
+        return engineFeatures;
+    };
+
+    public List<String> setFuselageFeatures () {
+
+        String[] features = {
+                "Aisle Count",
+                "Ducting",
+                "Monocoque/Semi-monocoque",
+                "Open Cockpit",
+                "Single/Multi Fuselage",
+                "Single/Multi Level"
+        };
+
+        List<String> fuselageFeatures = new ArrayList<String>(Arrays.asList(features));
+        return fuselageFeatures;
+    };
+
+    public List<String> setNoseFeatures () {
+
+        String[] features = {
+                "Ducting",
+                "Cowling",
+                "Engine",
+                "Radome",
+                "Turret"
+        };
+
+        List<String> noseFeatures = new ArrayList<String>(Arrays.asList(features));
+        return noseFeatures;
+    };
+
+    public List<String> setUndercarriageFeatures () {
+
+        String[] features = {
+                "Count",
+                "Configuration",
+                "Fixed/Retractable"
+        };
+
+        List<String> undercarriageFeatures = new ArrayList<String>(Arrays.asList(features));
+        return undercarriageFeatures;
+    };
+
     public List<String> setWingFeatures () {
 
         String[] features = {

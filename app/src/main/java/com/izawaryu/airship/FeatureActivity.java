@@ -67,8 +67,32 @@ public class FeatureActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+            String mPartStr = null;
+            List<String> partFeatures = null;
+
+            // The detail Activity called via intent.  Inspect the intent for forecast data.
+            Intent intent = getActivity().getIntent();
+            if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
+                mPartStr = intent.getStringExtra(Intent.EXTRA_TEXT);
+            }
+
             SetData data = new SetData();
-            List<String> partFeatures = data.setWingFeatures();
+
+            if (mPartStr.equals("Empennage")) {
+                partFeatures = data.setEmpennageFeatures();
+            } else if (mPartStr.equals("Engines")) {
+                partFeatures = data.setEngineFeatures();
+            } else if (mPartStr.equals("Fuselage")) {
+                partFeatures = data.setFuselageFeatures();
+            } else if (mPartStr.equals("Nose")) {
+                partFeatures = data.setNoseFeatures();
+            } else if (mPartStr.equals("Undercarriage")) {
+                partFeatures = data.setUndercarriageFeatures();
+            } else if (mPartStr.equals("Wings")) {
+                partFeatures = data.setWingFeatures();
+            } else {
+                partFeatures = data.setAirframeParts();
+            }
 
             mFeaturesAdapter =
                     new ArrayAdapter<String>(
